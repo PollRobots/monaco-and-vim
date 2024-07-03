@@ -11,8 +11,8 @@
     "watch": "tsc --watch"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Paul C Roberts <pacaro@gmail.com>",
+  "license": "MIT",
   "description": "",
   "devDependencies": {
     "@types/wicg-file-system-access": "^2023.10.5",
