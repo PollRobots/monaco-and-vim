@@ -1,16 +1,23 @@
 {
   "name": "monaco-and-vim",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf dist && mkdir dist",
+    "serve": "serve dist",
+    "build": "npm run clean && npm run build:html && npm run build:ts",
+    "build:html": "cp src/index.html dist && cp src/main.css dist",
+    "build:ts": "tsc",
+    "watch": "tsc --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/wicg-file-system-access": "^2023.10.5",
     "monaco-editor": "^0.50.0",
+    "serve": "^14.2.3",
     "typescript": "^5.5.3",
     "vim-monaco": "^1.0.1"
   }

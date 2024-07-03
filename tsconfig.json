@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "strict": true,
+    "target": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "esModuleInterop": true,
+    "module": "AMD",
+    "moduleResolution": "Node",
+    "types": ["@types/wicg-file-system-access"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

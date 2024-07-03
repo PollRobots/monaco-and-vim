@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Monaco/VIM</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+    <div class="container">
+        <div id="monaco"></div>
+        <div id="status"></div>
+    </div>
+    <script src="https://unpkg.com/monaco-editor@0.50.0/min/vs/loader.js"></script>
+    <script>
+        const baseUrl = "https://unpkg.com/monaco-editor@0.50.0/min/";
+        require.config({
+            paths: { 
+                vs: `${baseUrl}/vs` ,
+                "vim-monaco": "https://unpkg.com/vim-monaco@1.0.1/dist"
+            }});
+        require(['vs/editor/editor.main'], (monaco) => {
+            window.monaco = monaco;
+            require(['vim-monaco/vim-monaco.umd', 'index'], (vim, index) => {
+                window.vim = vim;
+                index.main();
+            }, (err) => {
+                console.error('Error loading vim-monaco', err);
+            });
+        }, (err) => {
+            console.error('Error loading monaco:', err);
+        });
+    </script>
+</body>
+</html>
