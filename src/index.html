@@ -10,13 +10,13 @@
         <div id="monaco"></div>
         <div id="status"></div>
     </div>
-    <script src="https://unpkg.com/monaco-editor@0.50.0/min/vs/loader.js"></script>
+    <script src="https://unpkg.com/monaco-editor@0.52.0/min/vs/loader.js"></script>
     <script>
-        const baseUrl = "https://unpkg.com/monaco-editor@0.50.0/min/";
+        const baseUrl = "https://unpkg.com/monaco-editor@0.52.0/min/";
         require.config({
-            paths: { 
+            paths: {
                 vs: `${baseUrl}/vs` ,
-                "vim-monaco": "https://unpkg.com/vim-monaco@1.0.1/dist"
+                "vim-monaco": "https://unpkg.com/vim-monaco@1.0.6/dist"
             }});
         require(['vs/editor/editor.main'], (monaco) => {
             window.monaco = monaco;
